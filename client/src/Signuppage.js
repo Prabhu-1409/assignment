@@ -28,7 +28,7 @@ function Signuppage() {
         console.log([...formdata.entries()])
         axios({
             method:'POST',
-            url:'http://localhost:3001/signup',
+            url:'https://backend-25ei.onrender.com/signup',
             data:user_data,
             headers:{
                 "Content-Type":'application/json'

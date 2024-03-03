@@ -1,5 +1,4 @@
 import './App.css';
-import Employee from './Employee';
 import Homepage from './Homepage';
 import Loginpage from './Loginpage';
 import Signuppage from './Signuppage';

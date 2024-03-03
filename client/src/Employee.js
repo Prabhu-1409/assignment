@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import './Loginpage.css'
 import search_icon from './assets/search.png'
@@ -8,7 +8,7 @@ function Employee() {
     const [employdata, setemploydata] = useState()
     const [searchemployee , setsearchemployee] = useState([])
     if(search===''){
-            axios.get('http://localhost:3001/employepage').then((details)=>{
+            axios.get('https://backend-25ei.onrender.com/employepage').then((details)=>{
             setsearchemployee(details.data)
             //console.log(details)
         }).catch((err)=>{
@@ -23,7 +23,7 @@ function Employee() {
         if(formdata.get('search')===''){
             setsearchemployee(employdata)
         }else{
-            axios.post('http://localhost:3001/employee_search',formdata,{
+            axios.post('https://backend-25ei.onrender.com/employee_search',formdata,{
                 headers:{
                     "Content-Type":"application/json"
                 }
