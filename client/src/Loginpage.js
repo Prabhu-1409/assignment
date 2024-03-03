@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom'
 function Loginpage() {
     const [email, setemail] = useState('')
     const [password ,setpassword] = useState('')
-    const [user_data, setuser_data] = useState('')
     const[alert_message,setalert] = useState('')
     const navigate = useNavigate()
     const userlogin = {
@@ -26,7 +25,6 @@ function Loginpage() {
         }).then((rec)=>{
             if(rec.data.email===email && rec.data.password===password){
                 console.log("User Exist")
-                setuser_data(rec.data)
                 navigate('/homepage',{replace:true})
             }else{
                 console.log("Register")
@@ -47,7 +45,7 @@ function Loginpage() {
         <button onClick={handlesubmit} className='signin'>Login</button>
       </form>
       <h6 className='alert'>{alert_message}</h6>
-      <a href='#' className='forgot'>Forgot Password ?</a>
+      <a href='forgot' className='forgot'>Forgot Password ?</a>
       <a href='/register' className='create'>Create an Account</a>
       </div>
     </div>
