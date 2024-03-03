@@ -5,7 +5,6 @@ import search_icon from './assets/search.png'
 
 function Employee() {
     const [search , setsearch] = useState('')
-    const [employdata, setemploydata] = useState()
     const [searchemployee , setsearchemployee] = useState([])
     if(search===''){
             axios.get('https://backend-25ei.onrender.com/employepage').then((details)=>{
@@ -20,9 +19,6 @@ function Employee() {
         e.preventDefault()
         const formdata = new FormData()
         formdata.append('search',search)
-        if(formdata.get('search')===''){
-            setsearchemployee(employdata)
-        }else{
             axios.post('https://backend-25ei.onrender.com/employee_search',formdata,{
                 headers:{
                     "Content-Type":"application/json"
@@ -31,7 +27,6 @@ function Employee() {
                 console.log(details)
                 setsearchemployee(details.data)
             })
-        }
     }
 
   return (
