@@ -1,1 +1,1 @@
-export const Baseurl="https://backend-intern-zl1s.onrender.com"
+export const Baseurl="https://assignment-2-r2q3.onrender.com"
