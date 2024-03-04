@@ -9,6 +9,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(bodyParser.json())
+const port = process.env.PORT || 3001
 
 mongoose.connect(uri).then((r)=>{
     console.log("connected")
@@ -88,6 +89,6 @@ app.get("/",(req,res)=>{
     res.send("hello")
 })
 
-app.listen("3001",(req,res)=>{
+app.listen(port,(req,res)=>{
     console.log("listening")
 })
