@@ -20,7 +20,7 @@ function Employee() {
         e.preventDefault()
         const formdata = new FormData()
         formdata.append('search',search)
-            axios.post('https://backend-25ei.onrender.com/employee_search',formdata,{
+            axios.post(`${Baseurl}/employee_search`,formdata,{
                 headers:{
                     "Content-Type":"application/json"
                 }
