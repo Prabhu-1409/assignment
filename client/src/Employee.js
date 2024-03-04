@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import './Loginpage.css'
 import search_icon from './assets/search.png'
+import { Baseurl } from './Variable'
 
 function Employee() {
     const [search , setsearch] = useState('')
     const [searchemployee , setsearchemployee] = useState([])
     if(search===''){
-            axios.get('https://backend-25ei.onrender.com/employepage').then((details)=>{
+            axios.get(`${Baseurl}/employepage`).then((details)=>{
             setsearchemployee(details.data)
             //console.log(details)
         }).catch((err)=>{

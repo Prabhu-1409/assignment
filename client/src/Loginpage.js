@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import './Loginpage.css'
 import logo from  './assets/logo.png'
 import { useNavigate } from 'react-router-dom'
+import { Baseurl } from './Variable'
 
 function Loginpage() {
     const [email, setemail] = useState('')
@@ -17,7 +18,7 @@ function Loginpage() {
         e.preventDefault()
         axios({
             method:'POST',
-            url:'https://backend-25ei.onrender.com/signin',
+            url:`${Baseurl}/signin`,
             data:userlogin,
             headers:{
                 "Content-Type":'application/json'

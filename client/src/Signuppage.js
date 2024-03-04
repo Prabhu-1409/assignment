@@ -3,6 +3,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import './Loginpage.css'
 import logo from './assets/logo.png'
+import { Baseurl } from './Variable'
 
 function Signuppage() {
     const [fname, setfname] = useState('')
@@ -28,7 +29,7 @@ function Signuppage() {
         console.log([...formdata.entries()])
         axios({
             method:'POST',
-            url:'https://backend-25ei.onrender.com/signup',
+            url:`${Baseurl}/signup`,
             data:user_data,
             headers:{
                 "Content-Type":'application/json'

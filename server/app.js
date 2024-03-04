@@ -5,9 +5,7 @@ const {user,employ_model} =require('../server/models/model.js')
 const bodyParser = require('body-parser')
 const uri = 'mongodb+srv://prabhu_m_s:T5eDLySw52GhH6yW@prabhucluster.67len0n.mongodb.net/?retryWrites=true&w=majority'
 const app = express()
-app.use(cors({
-    origin:'http://localhost:3000'
-}))
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(bodyParser.json())
